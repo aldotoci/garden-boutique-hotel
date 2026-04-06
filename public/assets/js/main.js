@@ -63,10 +63,6 @@
             direction: "horizontal",
             slidesPerView: 1,
             loop: true,
-            navigation: {
-              nextEl: ".next",
-              prevEl: ".prev",
-            },
             speed: 1000,
             effect: "slide",
             autoplay: {
@@ -358,15 +354,16 @@
         thumbSlider.controller.control = mainSlider;
         });
          
-        // instagram slider
-        var instaSlider = new Swiper('.insta__gallery__slider', {
+        // instagram slider (optional — home uses Instagram embeds instead)
+        if (document.querySelector(".insta__gallery__slider")) {
+          new Swiper(".insta__gallery__slider", {
             slidesPerView: 6,
             loop: true,
             speed: 1000,
             spaceBetween: 15,
             grabCursor: true,
             autoplay: {
-                delay: 3000,
+              delay: 3000,
             },
             breakpoints: {
               0: {
@@ -387,8 +384,9 @@
               1200: {
                 slidesPerView: 6,
               },
-            }
+            },
           });
+        }
 
       },  
       wowActive: function () {

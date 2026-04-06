@@ -1,28 +1,39 @@
 import Link from "next/link";
+import MobileMenuButton from "@/components/MobileMenuButton";
 import { rooms } from "@/data/rooms";
 
 export default function Header() {
   return (
     <>
-      {/* Top bar */}
-      <div className="header__top">
+      {/* Top bar — theme hides under 576px; keep visible on small screens; desktop uses classic row/cols */}
+      <div className="header__top max-[576px]:!block">
         <div className="container">
-          <div className="row justify-content-between">
-            <div className="col-lg-6 col-md-6">
-              <div className="social__links">
-                <a className="link__item gap-10" href="tel:+355692355555">
-                  <i className="flaticon-phone-flip" /> +355 69 235 5555
+          <div className="row justify-content-between align-items-center gy-2 gy-md-0">
+            <div className="col-12 col-md-6">
+              <div className="social__links flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-start md:gap-x-6">
+                <a className="link__item gap-10 inline-flex shrink-0 items-center" href="tel:+355692355555">
+                  <i className="flaticon-phone-flip shrink-0" aria-hidden />
+                  +355 69 235 5555
                 </a>
-                <a className="link__item gap-10" href="mailto:#">
-                  <i className="flaticon-envelope" /> info@gardenboutiquehotel.com
+                <a
+                  className="link__item gap-10 inline-flex min-w-0 max-w-full items-center"
+                  href="mailto:hotelgardenboutique@gmail.com"
+                >
+                  <i className="flaticon-envelope shrink-0" aria-hidden />
+                  <span className="min-w-0 break-words">hotelgardenboutique@gmail.com</span>
                 </a>
               </div>
             </div>
-            <div className="col-lg-6 col-md-6">
-              <div className="location">
-                <a className="link__item gap-10" href="#">
-                  <i className="flaticon-marker" />
-                  Rruga e Kavajës, 1002 Tirana, Albania
+            <div className="col-12 col-md-6">
+              <div className="location flex justify-center md:justify-end">
+                <a
+                  className="link__item gap-10 inline-flex max-w-full items-center text-center md:max-w-none md:text-end"
+                  href="https://maps.app.goo.gl/AmrPrVpN8Mp14rb87"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="flaticon-marker shrink-0" aria-hidden />
+                  <span className="min-w-0">Rruga e Kavajës, 1002 Tirana, Albania</span>
                 </a>
               </div>
             </div>
@@ -73,40 +84,14 @@ export default function Header() {
                             <Link href="/about">About</Link>
                           </li>
                           <li role="menuitem">
-                            <Link href="/restaurant">Restaurant</Link>
-                          </li>
-                          <li role="menuitem">
                             <Link href="/gallery">Gallery</Link>
-                          </li>
-                          <li role="menuitem">
-                            <Link href="/service">Service</Link>
-                          </li>
-                          <li role="menuitem">
-                            <Link href="/event">Event</Link>
-                          </li>
-                          <li role="menuitem">
-                            <Link href="/activities">Activities</Link>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li className="navigation__menu--item has-child has-arrow">
-                        <a href="#" className="navigation__menu--item__link">
-                          Blog
-                        </a>
-                        <ul className="submenu sub__style" role="menu">
-                          <li role="menuitem">
-                            <Link href="/blog">Blog</Link>
-                          </li>
-                          <li role="menuitem">
-                            <Link href="/blog-details">Blog Details</Link>
                           </li>
                         </ul>
                       </li>
 
                       <li className="navigation__menu--item">
                         <Link
-                          href="/contact"
+                          href="/#contact-us"
                           className="navigation__menu--item__link"
                         >
                           Contact
@@ -128,41 +113,17 @@ export default function Header() {
               </div>
 
               <div className="main__right">
-                <a
-                  href="#"
-                  className="theme-btn btn-style sm-btn border d-none d-lg-block"
-                  aria-label="Login Button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
-                >
-                  <span>Sign In</span>
-                </a>
-                <a
-                  href="#"
-                  className="theme-btn btn-style sm-btn border d-none d-lg-block"
-                  aria-label="Sign Up Button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#signupModal"
-                >
-                  <span>Sign Up</span>
-                </a>
                 <Link
                   href="/room-details/twin-room"
                   className="theme-btn btn-style sm-btn fill"
                 >
                   <span>Book Now</span>
                 </Link>
-                <button
-                  className="theme-btn btn-style sm-btn fill menu__btn d-lg-none"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasRight"
-                  aria-controls="offcanvasRight"
-                >
+                <MobileMenuButton className="theme-btn btn-style sm-btn fill menu__btn d-lg-none">
                   <span>
                     <img src="/assets/images/icon/menu-icon.svg" alt="" />
                   </span>
-                </button>
+                </MobileMenuButton>
               </div>
             </div>
           </div>

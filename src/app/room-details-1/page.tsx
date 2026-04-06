@@ -16,7 +16,7 @@ export default function RoomDetailsOnePage() {
               <div className="page__hero__content visually-hidden">
                 <h1 className="wow fadeInUp">About Us</h1>
                 <p className="wow fadeInUp font-sm">
-                  Welcome to Bokinn, where luxury meets comfort in the heart of canada.
+                  Garden Boutique Hotel — boutique stays in the heart of Tirana.
                 </p>
               </div>
             </div>
@@ -32,20 +32,17 @@ export default function RoomDetailsOnePage() {
             {/* Left column — room details */}
             <div className="col-xxl-8 col-xl-7">
               <div className="room__details">
-                <span className="h4 price">122$</span>
+                <span className="h4 price">€122</span>
                 <h2 className="room__title">Executive Room</h2>
                 <div className="room__meta">
-                  <span><i className="flaticon-construction" />35 sqm</span>
                   <span><i className="flaticon-user" />5 Person</span>
                 </div>
                 <p>
-                  Our elegantly appointed rooms and suites are designed to offer the utmost in comfort and
-                  style. Each room features modern amenities, plush furnishings, and thoughtful touches to
-                  ensure a relaxing stay.
+                  Our rooms are designed for comfort and calm, with modern amenities, quality linens, and
+                  thoughtful details for a relaxing stay in Tirana.
                   <br /><br />
-                  Indulge in a culinary journey at our on-site restaurants, where our talented chefs create
-                  mouthwatering dishes using the freshest local ingredients. Start your day with a sumptuous
-                  breakfast, enjoy a leisurely lunch, and savor a gourmet dinner in an elegant setting.
+                  For breakfast options and the best cafés and restaurants nearby, our front desk team is
+                  happy to share local recommendations.
                 </p>
 
                 {/* Room image pair */}
@@ -71,15 +68,11 @@ export default function RoomDetailsOnePage() {
                       <span>Shower</span>
                     </div>
                     <div className="single__item">
-                      <img src="/assets/images/icon/aeroplane.svg" height={30} width={36} alt="" />
-                      <span>Airport transport</span>
-                    </div>
-                  </div>
-                  <div className="group__row">
-                    <div className="single__item">
                       <img src="/assets/images/icon/balcony.svg" height={30} width={36} alt="" />
                       <span>Balcony</span>
                     </div>
+                  </div>
+                  <div className="group__row">
                     <div className="single__item">
                       <img src="/assets/images/icon/refrigerator.svg" height={30} width={36} alt="" />
                       <span>Refrigerator</span>
@@ -88,19 +81,9 @@ export default function RoomDetailsOnePage() {
                       <img src="/assets/images/icon/support.svg" height={30} width={36} alt="" />
                       <span>24/7 Support</span>
                     </div>
-                  </div>
-                  <div className="group__row">
                     <div className="single__item">
                       <img src="/assets/images/icon/desk.svg" height={30} width={36} alt="" />
                       <span>Work Desk</span>
-                    </div>
-                    <div className="single__item">
-                      <img src="/assets/images/icon/fitness.svg" height={30} width={36} alt="" />
-                      <span>Fitness Center</span>
-                    </div>
-                    <div className="single__item">
-                      <img src="/assets/images/icon/swimming-pool.svg" height={30} width={36} alt="" />
-                      <span>Swimming Pool</span>
                     </div>
                   </div>
                 </div>
@@ -123,9 +106,9 @@ export default function RoomDetailsOnePage() {
                   </div>
                 </div>
                 <p>
-                  Our elegantly appointed rooms and suites are designed to offer the utmost in comfort and
-                  style. Each room features modern amenities, plush furnishings, and thoughtful touches to
-                  ensure a relaxing stay.
+                  Every room at Garden Boutique Hotel is set up for rest and
+                  convenience, with quality bedding, climate control, and the
+                  essentials for a comfortable stay in Tirana.
                 </p>
               </div>
             </div>
@@ -202,7 +185,7 @@ export default function RoomDetailsOnePage() {
                     <div className="query__input checkbox wow fadeInUp">
                       <input type="checkbox" name="clean" id="rd-clean" />
                       <label htmlFor="rd-clean">Room Clean</label>
-                      <span>$12 / Night</span>
+                      <span>€12 / Night</span>
                     </div>
 
                     <div className="query__input checkbox wow fadeInUp">
@@ -212,20 +195,14 @@ export default function RoomDetailsOnePage() {
                     </div>
 
                     <div className="query__input checkbox wow fadeInUp">
-                      <input type="checkbox" name="transport" id="rd-transport" />
-                      <label htmlFor="rd-transport">Airport transport</label>
-                      <span>$30 / Night</span>
-                    </div>
-
-                    <div className="query__input checkbox wow fadeInUp">
                       <input type="checkbox" name="pet" id="rd-pet" />
                       <label htmlFor="rd-pet">Pet-Friendly</label>
-                      <span>$40 / Night</span>
+                      <span>€40 / Night</span>
                     </div>
 
                     <div className="total__price">
                       <span className="total h6 mb-0">Total Price</span>
-                      <span className="price h6 m-0">$82</span>
+                      <span className="price h6 m-0">€82</span>
                     </div>
 
                     <button
@@ -272,7 +249,6 @@ export default function RoomDetailsOnePage() {
                   <div className="room__card__meta">
                     <Link href={`/room-details/${room.slug}`} className="room__card__title h5">{room.title}</Link>
                     <div className="room__card__meta__info">
-                      <span><i className="flaticon-construction" />{room.sqm} sqm</span>
                       <span><i className="flaticon-user" />{room.person} Person</span>
                     </div>
                     <div className="room__price__tag">

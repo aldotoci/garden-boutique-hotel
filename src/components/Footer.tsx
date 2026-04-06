@@ -1,4 +1,15 @@
+import { HOTEL_CONTACT } from "@/data/hotelContact";
+
 export default function Footer() {
+  const {
+    email,
+    phoneDisplay,
+    phoneTel,
+    whatsappUrl,
+    instagramUrl,
+    facebookUrl,
+  } = HOTEL_CONTACT;
+
   return (
     <footer className="rts__section rts__footer is__common__footer footer__background has__shape">
       <div className="section__shape">
@@ -13,23 +24,6 @@ export default function Footer() {
         </div>
       </div>
       <div className="container">
-        <div className="row">
-          <div className="footer__newsletter">
-            <span className="h2">Join Our Newsletter</span>
-            <div className="rts__form">
-              <form action="#" method="post">
-                <input
-                  type="email"
-                  name="email"
-                  id="subscription"
-                  placeholder="Enter your mail"
-                  required
-                />
-                <button type="submit">Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
         <div className="row">
           <div className="footer__widget__wrapper">
             <div className="rts__widget">
@@ -50,54 +44,51 @@ export default function Footer() {
               <ul>
                 <li>
                   <a href="/rooms" aria-label="footer__link">
-                    Rooms &amp; Suites
+                    Rooms
                   </a>
                 </li>
                 <li>
-                  <a href="/restaurant" aria-label="footer__link">
-                    Dining
+                  <a href="/gallery" aria-label="footer__link">
+                    Gallery
                   </a>
                 </li>
                 <li>
-                  <a href="/service" aria-label="footer__link">
-                    Spa &amp; Wellness
+                  <a href="/about" aria-label="footer__link">
+                    About
                   </a>
                 </li>
-                <li>
-                  <a href="#" aria-label="footer__link">
-                    Special Offers
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="rts__widget">
-              <span className="widget__title">Guest Service</span>
-              <ul>
-                <li>24/7 Front Desk</li>
-                <li>Parking</li>
-                <li>Room Service</li>
-                <li>Free Wi-Fi</li>
-                <li>Concierge Service</li>
               </ul>
             </div>
             <div className="rts__widget">
               <span className="widget__title">Contact Us</span>
               <ul>
                 <li>
-                  <a aria-label="footer__contact" href="tel:+355692355555">
-                    <i className="flaticon-phone-flip" /> +355 69 235 5555
+                  <a aria-label="footer__contact" href={`tel:${phoneTel}`}>
+                    <i className="flaticon-phone-flip" /> {phoneDisplay}
                   </a>
                 </li>
                 <li>
                   <a
                     aria-label="footer__contact"
-                    href="mailto:info@gardenboutiquehotel.com"
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <i className="flaticon-envelope" /> info@gardenboutiquehotel.com
+                    <i className="flaticon-whatsapp" /> WhatsApp
                   </a>
                 </li>
                 <li>
-                  <a aria-label="footer__contact" href="#">
+                  <a aria-label="footer__contact" href={`mailto:${email}`}>
+                    <i className="flaticon-envelope" /> {email}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    aria-label="footer__contact"
+                    href="https://maps.app.goo.gl/AmrPrVpN8Mp14rb87"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="flaticon-marker" /> Rruga e Kavajës, 1002 Tirana, Albania
                   </a>
                 </li>
@@ -113,7 +104,7 @@ export default function Footer() {
               <p className="mb-0">Copyright &copy; {new Date().getFullYear()} Garden Boutique Hotel. All rights reserved.</p>
               <div className="footer__social__link">
                 <a
-                  href="https://www.instagram.com/garden_boutiquehotel"
+                  href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -121,14 +112,23 @@ export default function Footer() {
                 >
                   Instagram
                 </a>
-                <a href="#" aria-label="footer__social" className="link__item">
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="link__item"
+                >
                   Facebook
                 </a>
-                <a href="#" aria-label="footer__social" className="link__item">
-                  Linkedin
-                </a>
-                <a href="#" aria-label="footer__social" className="link__item">
-                  Twitter
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="link__item"
+                >
+                  WhatsApp
                 </a>
               </div>
             </div>

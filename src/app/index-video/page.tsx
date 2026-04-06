@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import AuthModals from "@/components/AuthModals";
 import AdvanceSearch from "@/components/AdvanceSearch";
 
 export default function IndexVideoPage() {
@@ -13,7 +12,6 @@ export default function IndexVideoPage() {
         </div>
       </div>
       <AdvanceSearch />
-      <AuthModals />
     </div>
   );
 }

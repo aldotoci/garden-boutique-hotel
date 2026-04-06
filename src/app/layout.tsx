@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import OffcanvasMenu from "@/components/OffcanvasMenu";
+import { MobileMenuProvider } from "@/components/MobileMenuProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,7 +39,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
       <body className="antialiased" suppressHydrationWarning>
-        {children}
+        <MobileMenuProvider>
+          {children}
+          <OffcanvasMenu />
+        </MobileMenuProvider>
 
         {/* Back to top */}
         <button type="button" className="rts__back__top" id="rts-back-to-top">

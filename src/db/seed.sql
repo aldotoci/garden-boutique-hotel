@@ -1,0 +1,116 @@
+-- Demo data for local / staging. Safe to re-run: removes prior seed rows first.
+DELETE FROM bookings WHERE source = 'Seed';
+
+INSERT INTO bookings (
+  guest_name,
+  email,
+  phone,
+  room,
+  check_in,
+  check_out,
+  adults,
+  children,
+  source,
+  status,
+  created_at,
+  updated_at
+)
+VALUES
+  (
+    'Elena Rossi',
+    'elena.rossi@example.com',
+    '+393331112233',
+    'Executive Suite',
+    to_char(CURRENT_DATE - 2, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE + 1, 'YYYY-MM-DD'),
+    2,
+    1,
+    'Seed',
+    'Checked-in',
+    NOW() - interval '5 days',
+    NOW() - interval '1 day'
+  ),
+  (
+    'Marcus Weber',
+    'marcus.weber@example.com',
+    '+491701234567',
+    'Twin Room',
+    to_char(CURRENT_DATE, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE + 2, 'YYYY-MM-DD'),
+    1,
+    0,
+    'Seed',
+    'Confirmed',
+    NOW() - interval '2 days',
+    NOW() - interval '2 days'
+  ),
+  (
+    'Sofia Martins',
+    'sofia.martins@example.com',
+    '+351912345678',
+    'Junior Suite',
+    to_char(CURRENT_DATE + 3, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE + 6, 'YYYY-MM-DD'),
+    2,
+    0,
+    'Seed',
+    'Pending',
+    NOW() - interval '1 day',
+    NOW() - interval '1 day'
+  ),
+  (
+    'James Chen',
+    'james.chen@example.com',
+    '+61400111222',
+    'Standard Double Room',
+    to_char(CURRENT_DATE - 5, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE - 2, 'YYYY-MM-DD'),
+    2,
+    2,
+    'Seed',
+    'Checked-out',
+    NOW() - interval '14 days',
+    NOW() - interval '3 days'
+  ),
+  (
+    'Amélie Dupont',
+    'amelie.dupont@example.com',
+    '+33612345678',
+    'Triple Room',
+    to_char(CURRENT_DATE + 7, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE + 10, 'YYYY-MM-DD'),
+    3,
+    1,
+    'Seed',
+    'Confirmed',
+    NOW() - interval '3 days',
+    NOW() - interval '3 days'
+  ),
+  (
+    'Oliver Smith',
+    'oliver.smith@example.com',
+    '+447700900123',
+    'Twin Room',
+    to_char(CURRENT_DATE + 1, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE + 4, 'YYYY-MM-DD'),
+    2,
+    0,
+    'Seed',
+    'Pending',
+    NOW() - interval '6 hours',
+    NOW() - interval '6 hours'
+  ),
+  (
+    'Nina Kowalski',
+    'nina.kowalski@example.com',
+    '+48501234567',
+    'Executive Suite',
+    to_char(CURRENT_DATE - 1, 'YYYY-MM-DD'),
+    to_char(CURRENT_DATE + 2, 'YYYY-MM-DD'),
+    2,
+    0,
+    'Seed',
+    'Rejected',
+    NOW() - interval '4 days',
+    NOW() - interval '2 days'
+  );

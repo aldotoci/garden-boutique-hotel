@@ -1,13 +1,18 @@
 interface PageHeroProps {
   title: string;
   desc: string;
+  backgroundImageUrl?: string;
 }
 
-export default function PageHero({ title, desc }: PageHeroProps) {
+export default function PageHero({
+  title,
+  desc,
+  backgroundImageUrl = "/assets/images/pages/header__bg.webp",
+}: PageHeroProps) {
   return (
     <div
       className="rts__section page__hero__height page__hero__bg"
-      style={{ backgroundImage: "url(/assets/images/pages/header__bg.webp)" }}
+      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
       <div className="container">
         <div className="row align-items-center justify-content-center">

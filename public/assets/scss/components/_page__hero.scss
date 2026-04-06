@@ -45,7 +45,6 @@
 
 }
 
-// blog details
 .page__hero__content{
     .texonomy{
         color: var(--rts-white);
@@ -89,12 +88,6 @@
         height: 700px;
         @include mq($xs){
             height: 850px;
-        }
-    }
-    &.if__is__blog{
-        height: 700px;
-        @include mq($xs){
-            height: 550px;
         }
     }
 }
