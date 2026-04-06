@@ -291,20 +291,6 @@ export default async function Home() {
                 </span>
                 <h2 className="content__title h2 lh-1">What Our Client Say</h2>
               </div>
-              <div className="slider__navigation">
-                <div className="nav__btn button-next">
-                  <img
-                    src="/assets/images/icon/arrow-left-short.svg"
-                    alt=""
-                  />
-                </div>
-                <div className="nav__btn button-prev">
-                  <img
-                    src="/assets/images/icon/arrow-right-short.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
             </div>
           </div>
           <div className="row">
@@ -315,8 +301,18 @@ export default async function Home() {
                     <div className="testimonial__item__content">
                       <div className="author__icon">
                         <img
-                          src="/assets/images/author/author-2x.webp"
-                          alt=""
+                          src="https://lh3.googleusercontent.com/a-/ALV-UjWSPz21CiYO5Z94sjgHW9xqU-_oLixpunhYjIDuY1XbcvCqNFg=w144-h144-p-rp-mo-ba3-br100"
+                          alt="Guest profile"
+                          style={{
+                            width: 140,
+                            height: 140,
+                            minWidth: 140,
+                            minHeight: 140,
+                            aspectRatio: "1 / 1",
+                            objectFit: "cover",
+                            borderRadius: "50%",
+                            display: "block",
+                          }}
                         />
                       </div>
                       <div className="testimonial__content">
@@ -326,50 +322,25 @@ export default async function Home() {
                             <i className="flaticon-star" />
                             <i className="flaticon-star" />
                             <i className="flaticon-star" />
-                            <i className="flaticon-star-sharp-half-stroke" />
+                            <i className="flaticon-star" />
                           </div>
                           <span className="slider__text d-block">
-                            Always ready to tackle new challenges with expertise.
-                            Their commitment to delivering tailored solutions is
-                            unmatched.
+                            We came from Istanbul and it was truly wonderful.
+                            Thank you so much for the friendly staff. The
+                            location was excellent, we walked everywhere.
+                            Breakfast was also very adequate and delicious. They
+                            were very helpful and understanding in everything.
+                            Thank you.
                           </span>
                           <div className="slider__author__info">
                             <div className="slider__author__info__content">
-                              <h6 className="mb-0">Sarah Martinez</h6>
-                              <span>COO of Apex Solutions</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <div className="testimonial__item__content">
-                      <div className="author__icon">
-                        <img
-                          src="/assets/images/author/author-4.webp"
-                          alt=""
-                        />
-                      </div>
-                      <div className="testimonial__content">
-                        <div className="single__slider__item ">
-                          <div className="slider__rating mb-20">
-                            <i className="flaticon-star" />
-                            <i className="flaticon-star" />
-                            <i className="flaticon-star" />
-                            <i className="flaticon-star" />
-                            <i className="flaticon-star-sharp-half-stroke" />
-                          </div>
-                          <span className="slider__text d-block">
-                            Always ready to tackle new challenges with expertise.
-                            Their commitment to delivering tailored solutions is
-                            unmatched.
-                          </span>
-                          <div className="slider__author__info">
-                            <div className="slider__author__info__content">
-                              <h6 className="mb-0">Sarah Martinez</h6>
-                              <span>COO of Apex Solutions</span>
+                              <a
+                                href="https://maps.app.goo.gl/pfyAMwrdYkEhPtin7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Read full review on Google Maps
+                              </a>
                             </div>
                           </div>
                         </div>

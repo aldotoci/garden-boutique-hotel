@@ -141,7 +141,7 @@ export default function RoomBookingForm({
     formatStayRange(successNotice.checkIn, successNotice.checkOut);
 
   return (
-    <div className="rts__booking__form has__background is__room__details">
+    <div id="book-your-stay" className="rts__booking__form has__background is__room__details">
       {successNotice ? (
         <div
           className="booking-success-overlay"

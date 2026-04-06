@@ -181,6 +181,14 @@ export default function StaySearchForm({
     wowDelay?: string,
   ) => {
     const id = `${formId}-${kind}`;
+    const sidebarValueWrapStyle =
+      layout === "sidebar"
+        ? {
+            width: "100%",
+            minWidth: 0,
+            maxWidth: "none",
+          }
+        : undefined;
     const inputEl = (
       <input
         ref={ref}
@@ -210,7 +218,7 @@ export default function StaySearchForm({
 
     const inner =
       layout === "sidebar" ? (
-        <div className="query__input__position">
+        <div className="query__input__position" style={sidebarValueWrapStyle}>
           {inputEl}
           {icon}
         </div>
@@ -244,6 +252,14 @@ export default function StaySearchForm({
     wowDelay?: string,
   ) => {
     const id = `${formId}-${idSuffix}`;
+    const sidebarValueWrapStyle =
+      layout === "sidebar"
+        ? {
+            width: "100%",
+            minWidth: 0,
+            maxWidth: "none",
+          }
+        : undefined;
     const selectEl = (
       <select
         name={name}
@@ -262,7 +278,7 @@ export default function StaySearchForm({
     );
     const inner =
       layout === "sidebar" ? (
-        <div className="query__input__position">
+        <div className="query__input__position" style={sidebarValueWrapStyle}>
           {selectEl}
           {icon}
         </div>

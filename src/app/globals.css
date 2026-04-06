@@ -374,6 +374,8 @@ body {
 /* Sidebar "Book Your Stay": keep labels on one line; value column flexes (theme used 160px max). */
 .rts__booking__form .advance__search__wrapper .query__input {
   gap: 0.75rem;
+  align-items: center;
+  min-height: 3.25rem;
 }
 
 .rts__booking__form .advance__search__wrapper .query__label {
@@ -396,8 +398,11 @@ body {
 .rts__booking__form .advance__search__wrapper .query__input__position .advance-search-date {
   margin-left: 0;
   flex: 1 1 auto;
+  width: 100% !important;
+  max-width: none !important;
   min-width: 0;
   min-height: 2.5rem;
+  line-height: 1.2;
   padding: 0.2rem 0 0.2rem 1.75rem;
   text-align: left;
 }
@@ -407,6 +412,9 @@ body {
   .query__input__position
   .query__input__icon.advance-search-calendar-hit {
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   left: 0;
   top: 50% !important;
   width: auto !important;
@@ -429,6 +437,9 @@ body {
   .query__input__position
   .query__input__icon:not(.advance-search-calendar-hit) {
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   left: 0;
   top: 50% !important;
   width: auto !important;
@@ -438,7 +449,10 @@ body {
 
 .rts__booking__form .advance__search__wrapper .query__input .form-select {
   margin-left: 0;
+  width: 100% !important;
+  max-width: none !important;
   padding-left: 1.75rem;
+  line-height: 1.2;
 }
 
 /*

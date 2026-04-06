@@ -60,6 +60,9 @@ export default async function RoomsPage({
     : null;
 
   const roomDetailsQs = stayQueryString(staySearch);
+  const roomDetailsHref = (slug: string) =>
+    `/room-details/${slug}${roomDetailsQs ? `?${roomDetailsQs}` : ""}`;
+  const roomBookingHref = (slug: string) => `${roomDetailsHref(slug)}#book-your-stay`;
 
   const visibleRooms = filterRoomsByGuestCount(
     rooms,
@@ -130,7 +133,7 @@ export default async function RoomsPage({
                     <div className="room__card h-100 w-100 d-flex flex-column">
                       <div className="room__card__top flex-shrink-0">
                         <div className="room__card__image">
-                          <Link href={`/room-details/${room.slug}?${roomDetailsQs}`}>
+                          <Link href={roomDetailsHref(room.slug)}>
                             <img
                               src={room.thumb}
                               width={420}
@@ -141,7 +144,7 @@ export default async function RoomsPage({
                         </div>
                       </div>
                       <div className="room__card__meta d-flex flex-column flex-grow-1">
-                        <Link href={`/room-details/${room.slug}?${roomDetailsQs}`} className="room__card__title h5">{room.title}</Link>
+                        <Link href={roomDetailsHref(room.slug)} className="room__card__title h5">{room.title}</Link>
                         <div className="room__card__meta__info">
                           <span><i className="flaticon-user" />{room.person} Person</span>
                         </div>
@@ -161,7 +164,7 @@ export default async function RoomsPage({
                           ) : null}
                         </div>
                         <Link
-                          href={`/room-details/${room.slug}?${roomDetailsQs}`}
+                          href={roomBookingHref(room.slug)}
                           className="room__card__link mt-auto pt-3"
                         >
                           Book the Room
@@ -175,7 +178,7 @@ export default async function RoomsPage({
 
             {/* Sticky booking sidebar */}
             <div className="col-xl-4 col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0 sticky-item">
-              <div className="rts__booking__form has__background no__shadow">
+              <div id="book-your-stay" className="rts__booking__form has__background no__shadow">
                 <StaySearchForm
                   layout="sidebar"
                   seed={staySearch}
@@ -188,71 +191,6 @@ export default async function RoomsPage({
         </div>
       </div>
 
-      {/* Testimonial — style 2: left panel + right slider */}
-      <div className="rts__section testimonial has__shape is__home__four pb-120">
-        <div className="section__shape">
-          <img src="/assets/images/about/section__shape.svg" alt="" />
-        </div>
-        <div className="container">
-          <div className="row g-30">
-            <div className="col-lg-5">
-              <div className="testimonial__left">
-                <span className="h6 subtitle__icon__two d-block wow fadeInUp">Testimonial</span>
-                <h2 className="content__title h2 lh-1">What Our Client Say About Us</h2>
-                <div className="applicant__list mt-40">
-                  {["3.webp","4.webp","5.webp","6.webp"].map((img, i) => (
-                    <div key={i} className="single__list">
-                      <img src={`/assets/images/author/${img}`} alt="" />
-                      {i === 3 && <div className="icon-plus">+</div>}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="testimonial__slider__style__two">
-                <div className="testimonial__slider overflow-hidden">
-                  <div className="swiper-wrapper">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="swiper-slide">
-                        <div className="testimonial__item__content">
-                          <div className="testimonial__content">
-                            <div className="single__slider__item">
-                              <div className="slider__rating mb-20">
-                                <i className="flaticon-star" /><i className="flaticon-star" />
-                                <i className="flaticon-star" /><i className="flaticon-star" />
-                                <i className="flaticon-star-sharp-half-stroke" />
-                              </div>
-                              <span className="slider__text d-block">
-                                Always ready to tackle new challenges with expertise. Their commitment to
-                                delivering tailored solutions is unmatched.
-                              </span>
-                              <div className="slider__author__info">
-                                <div className="slider__author__info__content">
-                                  <h6 className="mb-0">Sarah Martinez</h6>
-                                  <span>COO of Apex Solutions</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="slider__navigation">
-                  <div className="nav__btn button-next">
-                    <img src="/assets/images/icon/arrow-left-short.svg" alt="" />
-                  </div>
-                  <div className="nav__btn button-prev">
-                    <img src="/assets/images/icon/arrow-right-short.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </PageShell>
   );
 }

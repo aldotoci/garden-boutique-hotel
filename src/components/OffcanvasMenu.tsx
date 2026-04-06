@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMobileMenu } from "@/components/MobileMenuProvider";
 import { rooms } from "@/data/rooms";
 
-type ExpandedSection = "rooms" | "pages" | null;
+type ExpandedSection = "rooms" | null;
 
 export default function OffcanvasMenu() {
   const { open, closeMenu } = useMobileMenu();
@@ -117,12 +117,6 @@ export default function OffcanvasMenu() {
                       </Link>
                     </li>
 
-                    <li className="slide">
-                      <Link className="slide__menu__item" href="/about" onClick={closeMenu}>
-                        About us
-                      </Link>
-                    </li>
-
                     <li
                       className={`slide has__children${expanded === "rooms" ? " active" : ""}`}
                     >
@@ -153,32 +147,21 @@ export default function OffcanvasMenu() {
                       </ul>
                     </li>
 
-                    <li
-                      className={`slide has__children${expanded === "pages" ? " active" : ""}`}
-                    >
-                      <a
-                        className="slide__menu__item"
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          toggleSection("pages");
-                        }}
-                      >
-                        Pages
-                        <span className="toggle" />
-                      </a>
-                      <ul className="slide__menu">
-                        <li>
-                          <Link href="/gallery" onClick={closeMenu}>
-                            Gallery
-                          </Link>
-                        </li>
-                      </ul>
+                    <li className="slide">
+                      <Link className="slide__menu__item" href="/gallery" onClick={closeMenu}>
+                        Gallery
+                      </Link>
                     </li>
 
                     <li className="slide">
                       <Link className="slide__menu__item" href="/#contact-us" onClick={closeMenu}>
                         Contact Us
+                      </Link>
+                    </li>
+
+                    <li className="slide">
+                      <Link className="slide__menu__item" href="/about" onClick={closeMenu}>
+                        About us
                       </Link>
                     </li>
                   </ul>
